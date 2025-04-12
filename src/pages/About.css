@@ -1,0 +1,46 @@
+.about-container {
+    position: relative;
+    padding: 2.5rem;
+    max-width: 1200px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: #222;
+    z-index: 1; /* Ensures content stays above background */
+    overflow: hidden;
+  }
+  
+  /* Pseudo element for background image with opacity */
+  .about-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assest/AbouBG.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2; /* Adjust opacity here */
+    z-index: -1; /* Keep it behind content */
+  }
+  
+  /* Tablet */
+  @media (max-width: 768px) {
+    .about-container::before {
+      background-position: top;
+      background-size: contain;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 480px) {
+    .about-container {
+      padding: 1.5rem;
+    }
+    .about-container::before {
+      background-position: top center;
+      background-size: cover;
+    }
+  }
+  

@@ -1,0 +1,227 @@
+/* Home.css */
+
+.home-wrapper {
+  padding: 3rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fefefe, #f7faff);
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.home-wrapper h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-wrapper .brand {
+  color: #d72638;
+  font-weight: bold;
+}
+
+.home-wrapper p {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #555;
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Help Button Styles */
+.help-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.help-button {
+  width: 250px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.help-button:hover {
+  transform: scale(1.1) rotate(-2deg);
+  opacity: 0.9;
+}
+
+.help-text {
+  margin-top: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #d72638;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.help-text:hover {
+  transform: scale(1.05);
+}
+
+/* Additional Content Section */
+.additional-content {
+  text-align: center;
+  margin: 2rem auto 3rem;
+  max-width: 750px;
+}
+
+.additional-content h2 {
+  font-size: 2rem;
+  color: #d72638;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.additional-content p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  text-align: justify;
+}
+
+/* Home Sections / Feature Cards */
+.home-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Card Headings */
+.card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #d72638;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background-color: #d72638;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 10px;
+  animation: glowLine 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowLine {
+  from {
+    box-shadow: 0 0 5px #d72638;
+  }
+  to {
+    box-shadow: 0 0 15px #d72638;
+  }
+}
+
+.card ul {
+  padding-left: 1.5rem;
+  color: #444;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse Animation for Help Button */
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Optional Gradient Text */
+.gradient-text {
+  background: linear-gradient(to right, #d72638, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+  .home-wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .card h2 {
+    font-size: 1.6rem;
+  }
+
+  .help-text {
+    font-size: 1.1rem;
+  }
+
+  .additional-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .additional-content p {
+    font-size: 1rem;
+  }
+}
