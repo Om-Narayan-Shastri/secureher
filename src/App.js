@@ -9,9 +9,11 @@ import Emergency from './pages/Emergency';
 import Motivation from './pages/Motivation';
 import Counseling from './pages/Counseling';
 import About from './pages/About';
+import NewsUpdates from './pages/NewsUpdates';
+import PrivacyPolicy from './pages/PrivacyPolicy';  // Import the PrivacyPolicy page
 import NotFound from './pages/NotFound';
 
-// Initialize i18next (make sure you have set up your src/i18n.js configuration file)
+// Initialize i18next (ensure you have set up your src/i18n.js configuration file)
 import './i18n';
 
 function App() {
@@ -27,7 +29,6 @@ function App() {
     }
 
     setLocationLoading(true);
-
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
@@ -82,6 +83,8 @@ function App() {
           <Route path="/motivation" element={<Motivation />} />
           <Route path="/counseling" element={<Counseling />} />
           <Route path="/about" element={<About />} />
+          <Route path="/news" element={<NewsUpdates />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />  {/* Privacy Policy route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

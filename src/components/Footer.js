@@ -6,30 +6,34 @@ const Footer = () => {
     <footer style={styles.footer}>
       <div style={styles.container}>
         <div className="columns" style={styles.columns}>
+
+          {/* Column 1 */}
           <div style={styles.column}>
-            <h3 style={styles.columnHeading}>Heading 1</h3>
+            <h3 style={styles.columnHeading}>Resources</h3>
             <ul style={styles.list}>
-              <li><a href="#payment" style={styles.link}>Payment Center</a></li>
+              <li><a href="#payment" style={styles.link}>Donation for her</a></li>
               <li><a href="#contact" style={styles.link}>Contact Directory</a></li>
               <li><a href="#forms" style={styles.link}>Forms</a></li>
-              <li><a href="#news" style={styles.link}>News &amp; Updates</a></li>
+              <li><a href="news" style={styles.link}>News &amp; Updates</a></li>
               <li><a href="#faq" style={styles.link}>FAQs</a></li>
             </ul>
           </div>
 
+          {/* Column 2 */}
           <div style={styles.column}>
-            <h3 style={styles.columnHeading}>Heading 2</h3>
+            <h3 style={styles.columnHeading}>Legal & Help</h3>
             <ul style={styles.list}>
               <li><a href="#tutorial" style={styles.link}>Website Tutorial</a></li>
               <li><a href="#accessibility" style={styles.link}>Accessibility</a></li>
               <li><a href="#disclaimer" style={styles.link}>Disclaimer</a></li>
-              <li><a href="#privacy" style={styles.link}>Privacy Policy</a></li>
+              <li><a href="privacy" style={styles.link}>Privacy Policy</a></li>
               <li><a href="#faqs" style={styles.link}>FAQs</a></li>
             </ul>
           </div>
 
+          {/* Column 3 */}
           <div style={styles.column}>
-            <h3 style={styles.columnHeading}>Heading 3</h3>
+            <h3 style={styles.columnHeading}>Departments</h3>
             <ul style={styles.list}>
               <li><a href="#parks" style={styles.link}>Parks &amp; Recreation</a></li>
               <li><a href="#publicworks" style={styles.link}>Public Works</a></li>
@@ -39,30 +43,22 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Column 4 */}
           <div style={styles.column}>
             <h3 style={styles.columnHeading}>Follow Us</h3>
             <div style={styles.socialIcons}>
-              <a href="https://facebook.com" style={styles.socialLink} target="_blank" rel="noopener noreferrer">
-                <FaFacebookF />
-              </a>
-              <a href="https://twitter.com" style={styles.socialLink} target="_blank" rel="noopener noreferrer">
-                <FaTwitter />
-              </a>
-              <a href="https://instagram.com" style={styles.socialLink} target="_blank" rel="noopener noreferrer">
-                <FaInstagram />
-              </a>
+              <a href="https://facebook.com" style={styles.socialLink} target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+              <a href="https://twitter.com" style={styles.socialLink} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+              <a href="https://instagram.com" style={styles.socialLink} target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             </div>
           </div>
         </div>
 
+        {/* Footer Bottom */}
         <div style={styles.footerBottom}>
           <hr style={styles.divider} />
-          <p style={styles.copyText}>
-            © 2025 SecureHer | Built with ❤️ For every girls
-          </p>
-          <a href="mailto:omnarayanshastri12345@gmail.com" style={styles.contactLink}>
-            Contact Support
-          </a>
+          <p style={styles.copyText}>© 2025 SecureHer | Built with ❤️ for every girl</p>
+          <a href="mailto:omnarayanshastri12345@gmail.com" style={styles.contactLink}>Contact Support</a>
         </div>
       </div>
     </footer>
@@ -97,7 +93,6 @@ const styles = {
     fontSize: '1.2rem',
     marginBottom: '1rem',
     fontWeight: 'bold',
-    // borderBottom: '2px solid #fff',
     display: 'block',
     width: '100%',
     textAlign: 'left',
@@ -117,7 +112,6 @@ const styles = {
   },
   socialIcons: {
     display: 'flex',
-    flexDirection: 'row', // ensure social icons remain in one row
     gap: '0.8rem',
     marginTop: '10px',
     justifyContent: 'left',
@@ -153,7 +147,7 @@ const styles = {
   },
 };
 
-// Inject global hover styles for footer links and social icons
+// Global hover effects
 const hoverStyle = document.createElement('style');
 hoverStyle.innerHTML = `
   footer a:hover {
@@ -163,7 +157,7 @@ hoverStyle.innerHTML = `
 `;
 document.head.appendChild(hoverStyle);
 
-// Responsive styles for mobile and tablet devices
+// Responsive styles
 const responsiveStyle = document.createElement('style');
 responsiveStyle.innerHTML = `
   @media (max-width: 768px) {
