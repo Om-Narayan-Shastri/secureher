@@ -4,14 +4,25 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 // Import pages
+import Accessibility from './pages/Accessibility'; 
 import Home from './pages/Home';
 import Emergency from './pages/Emergency';
 import Motivation from './pages/Motivation';
 import Counseling from './pages/Counseling';
 import About from './pages/About';
 import NewsUpdates from './pages/NewsUpdates';
-import PrivacyPolicy from './pages/PrivacyPolicy';  // Import the PrivacyPolicy page
+import PrivacyPolicy from './pages/PrivacyPolicy'; // Import the PrivacyPolicy page
+import Donation from './pages/Donation';  // Import the Donation page
 import NotFound from './pages/NotFound';
+import WebsiteTutorial from './pages/WebsiteTutorial';
+import ContactDirectory from './pages/ContactDirectory';
+import Forms from './pages/Forms';
+import PAQs from './pages/PAQs'; 
+import Disclaimer from './pages/Disclaimer'; 
+import ParksAndRecreation from './pages/ParksAndRecreation';
+import PublicWorks from './pages/PublicWorks';
+import PoliceDepartment from './pages/PoliceDepartment';
+import MayorCouncil from './pages/MayorCouncil';
 
 // Initialize i18next (ensure you have set up your src/i18n.js configuration file)
 import './i18n';
@@ -50,19 +61,10 @@ function App() {
   };
 
   return (
-    <div
-      className="App"
-      style={{
-        fontFamily: 'sans-serif',
-        backgroundColor: '#fff',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <div className="App" style={styles.app}>
       <Header />
 
-      <main style={{ flex: 1 }}>
+      <main style={styles.main}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -84,8 +86,20 @@ function App() {
           <Route path="/counseling" element={<Counseling />} />
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<NewsUpdates />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />  {/* Privacy Policy route */}
+          <Route path="/privacy" element={<PrivacyPolicy />} /> {/* Privacy Policy route */}
+          <Route path="/donation" element={<Donation />} /> {/* Donation page route */}
           <Route path="*" element={<NotFound />} />
+          <Route path="/tutorial" element={<WebsiteTutorial />} />
+          <Route path="/contact-directory" element={<ContactDirectory />} />
+          <Route path="/forms" element={<Forms />} />
+          <Route path="/paqs" element={<PAQs />} />
+          <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/parks&recreation" element={<ParksAndRecreation />} />
+          <Route path="/publicWorks" element={<PublicWorks />} />
+          <Route path="/policepepartment" element={<PoliceDepartment />} />
+          <Route path="/mayor-council" element={<MayorCouncil />} />
+
         </Routes>
       </main>
 
@@ -93,5 +107,19 @@ function App() {
     </div>
   );
 }
+
+// Styles moved to a separate object for cleaner code
+const styles = {
+  app: {
+    fontFamily: 'sans-serif',
+    backgroundColor: '#fff',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  main: {
+    flex: 1,
+  },
+};
 
 export default App;

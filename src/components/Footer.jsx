@@ -11,11 +11,11 @@ const Footer = () => {
           <div style={styles.column}>
             <h3 style={styles.columnHeading}>Resources</h3>
             <ul style={styles.list}>
-              <li><a href="#payment" style={styles.link}>Donation for her</a></li>
-              <li><a href="#contact" style={styles.link}>Contact Directory</a></li>
-              <li><a href="#forms" style={styles.link}>Forms</a></li>
-              <li><a href="news" style={styles.link}>News &amp; Updates</a></li>
-              <li><a href="#faq" style={styles.link}>FAQs</a></li>
+              <li><a href="/donation" style={styles.link}>Donation for Her</a></li>
+              <li><a href="/contact-directory" style={styles.link}>Contact Directory</a></li>
+              <li><a href="/forms" style={styles.link}>Forms</a></li>
+              <li><a href="/news" style={styles.link}>News &amp; Updates</a></li>
+              <li><a href="/paqs" style={styles.link}>FAQs</a></li>
             </ul>
           </div>
 
@@ -23,11 +23,11 @@ const Footer = () => {
           <div style={styles.column}>
             <h3 style={styles.columnHeading}>Legal & Help</h3>
             <ul style={styles.list}>
-              <li><a href="#tutorial" style={styles.link}>Website Tutorial</a></li>
-              <li><a href="#accessibility" style={styles.link}>Accessibility</a></li>
-              <li><a href="#disclaimer" style={styles.link}>Disclaimer</a></li>
-              <li><a href="privacy" style={styles.link}>Privacy Policy</a></li>
-              <li><a href="#faqs" style={styles.link}>FAQs</a></li>
+              <li><a href="/tutorial" style={styles.link}>Website Tutorial</a></li>
+              <li><a href="/accessibility" style={styles.link}>Accessibility</a></li>
+              <li><a href="/disclaimer" style={styles.link}>Disclaimer</a></li>
+              <li><a href="/privacy" style={styles.link}>Privacy Policy</a></li>
+              {/* <li><a href="#" style={styles.link}>FAQs</a></li> */}
             </ul>
           </div>
 
@@ -35,11 +35,11 @@ const Footer = () => {
           <div style={styles.column}>
             <h3 style={styles.columnHeading}>Departments</h3>
             <ul style={styles.list}>
-              <li><a href="#parks" style={styles.link}>Parks &amp; Recreation</a></li>
-              <li><a href="#publicworks" style={styles.link}>Public Works</a></li>
-              <li><a href="#police" style={styles.link}>Police Department</a></li>
-              <li><a href="#fire" style={styles.link}>Fire</a></li>
-              <li><a href="#mayor" style={styles.link}>Mayor &amp; City Council</a></li>
+              <li><a href="/parks&recreation" style={styles.link}>Parks &amp; Recreation</a></li>
+              <li><a href="/publicWorks" style={styles.link}>Public Works</a></li>
+              <li><a href="/policepepartment" style={styles.link}>Police Department</a></li>
+              {/* <li><a href="#" style={styles.link}>Fire</a></li> */}
+              <li><a href="/mayor-council" style={styles.link}>Mayor &amp; City Council</a></li>
             </ul>
           </div>
 
@@ -65,6 +65,7 @@ const Footer = () => {
   );
 };
 
+// The styles object remains unchanged
 const styles = {
   footer: {
     background: 'linear-gradient(90deg, #2C3E50, #34495E)',
@@ -147,7 +148,7 @@ const styles = {
   },
 };
 
-// Global hover effects
+// Add global styles with hover effect
 const hoverStyle = document.createElement('style');
 hoverStyle.innerHTML = `
   footer a:hover {
@@ -157,7 +158,7 @@ hoverStyle.innerHTML = `
 `;
 document.head.appendChild(hoverStyle);
 
-// Responsive styles
+// Responsive tweaks
 const responsiveStyle = document.createElement('style');
 responsiveStyle.innerHTML = `
   @media (max-width: 768px) {

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './About.css'; // 👈 import CSS file
+import './About.css';
 import radhaImg from '../assest/Radha.jpg';
 import asthaImg from '../assest/Astha.jpg';
 import omImg from '../assest/Om.jpg';
@@ -138,13 +138,6 @@ const styles = {
     fontSize: '0.95rem',
     color: '#555',
     lineHeight: '1.4',
-  },
-  note: {
-    textAlign: 'center',
-    marginTop: '3rem',
-    fontStyle: 'italic',
-    color: '#666',
-    padding: '0 1rem',
   },
 };
 

@@ -1,31 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import logoImg from '../assest/Logo.jpeg'; // Adjust the path if needed
+import logoImg from '../assest/Logo.jpeg'; // Adjust path if needed
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
   return (
     <div style={styles.languageSwitcher}>
-      <button
-        onClick={() => i18n.changeLanguage('en')}
-        style={{
-          ...styles.langButton,
-          background: i18n.language === 'en' ? '#FFD700' : 'transparent',
-        }}
-      >
-        EN
-      </button>
-      <button
-        onClick={() => i18n.changeLanguage('hi')}
-        style={{
-          ...styles.langButton,
-          background: i18n.language === 'hi' ? '#FFD700' : 'transparent',
-        }}
-      >
-        HI
-      </button>
+      {['en', 'hi'].map((lang) => (
+        <button
+          key={lang}
+          onClick={() => i18n.changeLanguage(lang)}
+          style={{
+            ...styles.langButton,
+            background: i18n.language === lang ? '#FFD700' : 'transparent',
+          }}
+        >
+          {lang.toUpperCase()}
+        </button>
+      ))}
     </div>
   );
 };
@@ -34,8 +28,6 @@ const Header = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,23 +38,17 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <header style={styles.header}>
-      <Link
-        to="/"
-        style={{ ...styles.logoContainer, ...styles.link }}
-        onClick={() => setMenuOpen(false)}
-      >
+      <Link to="/" style={{ ...styles.logoContainer, ...styles.link }} onClick={() => setMenuOpen(false)}>
         <img src={logoImg} alt="SecureHer Logo" style={styles.logoImg} />
         <span style={styles.logoText}>SecureHer</span>
       </Link>
 
       {isMobile && (
-        <button
-          onClick={toggleMenu}
-          style={styles.hamburger}
-          className="hamburger-btn"
-        >
+        <button onClick={toggleMenu} style={styles.hamburger} className="hamburger-btn">
           ☰
         </button>
       )}
@@ -70,15 +56,11 @@ const Header = () => {
       <nav
         style={{
           ...styles.nav,
-          ...(isMobile
-            ? menuOpen
-              ? styles.navMobileOpen
-              : styles.navMobileClosed
-            : {}),
+          ...(isMobile ? (menuOpen ? styles.navMobileOpen : styles.navMobileClosed) : {}),
         }}
         className="nav-links"
       >
-        {["Motivation", "Counseling", "Emergency", "About"].map((page) => {
+        {['Motivation', 'Counseling', 'Emergency', 'About'].map((page) => {
           const path = `/${page.toLowerCase()}`;
           const isActive = location.pathname === path;
 
@@ -97,13 +79,13 @@ const Header = () => {
           );
         })}
 
-        {/* Add Language Switcher */}
         <LanguageSwitcher />
       </nav>
     </header>
   );
 };
 
+// Styles
 const styles = {
   header: {
     display: 'flex',
@@ -190,7 +172,7 @@ const styles = {
   },
 };
 
-// Global hover styles
+// Inject global hover styles
 const styleTag = document.createElement('style');
 styleTag.innerHTML = `
   .nav-links a:hover {

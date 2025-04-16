@@ -11,10 +11,22 @@ const LanguageSwitcher = () => {
 
   return (
     <div style={styles.container}>
-      <button onClick={() => changeLanguage('en')} style={styles.button}>
+      <button
+        onClick={() => changeLanguage('en')}
+        style={{
+          ...styles.button,
+          backgroundColor: i18n.language === 'en' ? '#FFD700' : '#fff',
+        }}
+      >
         EN
       </button>
-      <button onClick={() => changeLanguage('hi')} style={styles.button}>
+      <button
+        onClick={() => changeLanguage('hi')}
+        style={{
+          ...styles.button,
+          backgroundColor: i18n.language === 'hi' ? '#FFD700' : '#fff',
+        }}
+      >
         HI
       </button>
     </div>
@@ -29,13 +41,13 @@ const styles = {
   },
   button: {
     border: 'none',
-    padding: '5px 10px',
+    padding: '6px 12px',
     cursor: 'pointer',
-    borderRadius: '4px',
+    borderRadius: '6px',
     fontWeight: 'bold',
-    background: '#fff',
     color: '#2C3E50',
-    transition: 'background 0.3s',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
   },
 };
 

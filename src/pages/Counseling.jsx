@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import db from '../firebaseConfig'; // ✅ Make sure this is correctly set up
+import db from '../firebaseConfig'; // ✅ Ensure Firebase is properly configured
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 const Counseling = () => {
@@ -21,7 +21,6 @@ const Counseling = () => {
     e.preventDefault();
     setError('');
 
-    // Simple validation
     if (!form.name || !form.email || !form.issueType || !form.message) {
       alert('Please fill all fields');
       return;
